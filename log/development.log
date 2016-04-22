@@ -1,0 +1,111 @@
+
+
+Started GET "/" for 127.0.0.1 at 2016-04-22 10:17:15 +0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/kmint/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (14.7ms)
+Completed 200 OK in 57ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (131.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (132.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTags (20160422032328)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "image" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160422032328"]]
+  [1m[35m (146.5ms)[0m  commit transaction
+Migrating to CreateDestinations (20160422032335)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "destinations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "image" varchar, "description" varchar, "tag_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160422032335"]]
+  [1m[35m (141.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("title", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Beaches"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/beach01.jpg"], ["created_at", "2016-04-22 03:53:25.825487"], ["updated_at", "2016-04-22 03:53:25.825487"]]
+  [1m[35m (141.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Ipanema"], ["description", "The beach of Ipanema is known for its elegant development and its social life."], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/beach02.jpg"], ["tag_id", 1], ["created_at", "2016-04-22 03:53:25.977299"], ["updated_at", "2016-04-22 03:53:25.977299"]]
+  [1m[36m (136.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "7 Mile Beach"], ["description", "The western coastline contains the island's finest beaches."], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/beach03.jpg"], ["tag_id", 1], ["created_at", "2016-04-22 03:53:26.115185"], ["updated_at", "2016-04-22 03:53:26.115185"]]
+  [1m[35m (142.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "El Castillo"], ["description", "An elite destination famous for its white sand beaches"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/beach04.jpg"], ["tag_id", 1], ["created_at", "2016-04-22 03:53:26.260477"], ["updated_at", "2016-04-22 03:53:26.260477"]]
+  [1m[36m (141.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("title", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "History"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/history01.jpg"], ["created_at", "2016-04-22 03:53:26.405619"], ["updated_at", "2016-04-22 03:53:26.405619"]]
+  [1m[35m (141.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Machu Picchu"], ["description", "Machu Picchu was built around 1450, at the height of the Inca Empire."], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/history02.jpg"], ["tag_id", 2], ["created_at", "2016-04-22 03:53:26.550487"], ["updated_at", "2016-04-22 03:53:26.550487"]]
+  [1m[36m (141.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Dunrobin Castle"], ["description", "Dunrobin Castle is a stately home in Sutherland. Its origins lie in the Middle Ages."], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/history03.jpg"], ["tag_id", 2], ["created_at", "2016-04-22 03:53:26.695860"], ["updated_at", "2016-04-22 03:53:26.695860"]]
+  [1m[35m (232.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Palace of Westminster"], ["description", "The meeting place of the two houses of the Parliament of the United Kingdom"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/history04.jpg"], ["tag_id", 2], ["created_at", "2016-04-22 03:53:26.931548"], ["updated_at", "2016-04-22 03:53:26.931548"]]
+  [1m[36m (164.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("title", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Skiing"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/skiing01.jpg"], ["created_at", "2016-04-22 03:53:27.099059"], ["updated_at", "2016-04-22 03:53:27.099059"]]
+  [1m[35m (141.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Dolomites"], ["description", "The Dolomites are a mountain range located in northeastern Italy famous for skiing in the winter months."], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/skiing02.jpg"], ["tag_id", 3], ["created_at", "2016-04-22 03:53:27.244160"], ["updated_at", "2016-04-22 03:53:27.244160"]]
+  [1m[36m (141.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Chamonix"], ["description", "It was the site of the first Winter Olympics in 1924"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/skiing03.jpg"], ["tag_id", 3], ["created_at", "2016-04-22 03:53:27.388750"], ["updated_at", "2016-04-22 03:53:27.388750"]]
+  [1m[35m (142.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Vail"], ["description", "The second largest single mountain ski resort in the United States"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/skiing04.jpg"], ["tag_id", 3], ["created_at", "2016-04-22 03:53:27.534053"], ["updated_at", "2016-04-22 03:53:27.534053"]]
+  [1m[36m (141.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("title", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Adventure"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/adventure01.jpg"], ["created_at", "2016-04-22 03:53:27.679259"], ["updated_at", "2016-04-22 03:53:27.679259"]]
+  [1m[35m (141.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Banzai Pipeline"], ["description", "A surf reef break located in Hawai notorious for huge waves."], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/adventure02.jpg"], ["tag_id", 4], ["created_at", "2016-04-22 03:53:27.823955"], ["updated_at", "2016-04-22 03:53:27.823955"]]
+  [1m[36m (141.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Saxon Switzerland"], ["description", "A hilly climbing area and national park in Saxony, Germany."], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/adventure03.jpg"], ["tag_id", 4], ["created_at", "2016-04-22 03:53:27.968051"], ["updated_at", "2016-04-22 03:53:27.968051"]]
+  [1m[35m (143.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Pucon"], ["description", "Striking natural surroundings near a volcano and several lakes, nature reserves and thermal baths."], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/adventure04.jpg"], ["tag_id", 4], ["created_at", "2016-04-22 03:53:28.113799"], ["updated_at", "2016-04-22 03:53:28.113799"]]
+  [1m[36m (141.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("title", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Family"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/family01.jpg"], ["created_at", "2016-04-22 03:53:28.258772"], ["updated_at", "2016-04-22 03:53:28.258772"]]
+  [1m[35m (141.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "British Museum"], ["description", "A museum dedicated to human history and culture, with over 8 million works."], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/family02.jpg"], ["tag_id", 5], ["created_at", "2016-04-22 03:53:28.403759"], ["updated_at", "2016-04-22 03:53:28.403759"]]
+  [1m[36m (141.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "San Diego Zoo"], ["description", "Houses over 3,700 animals of more than 650 species and subspecies."], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/family03.jpg"], ["tag_id", 5], ["created_at", "2016-04-22 03:53:28.548583"], ["updated_at", "2016-04-22 03:53:28.548583"]]
+  [1m[35m (153.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "destinations" ("name", "description", "image", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Central Park"], ["description", "The most visited urban park in the US as well as one of the most filmed locations in the world."], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/family04.jpg"], ["tag_id", 5], ["created_at", "2016-04-22 03:53:28.704948"], ["updated_at", "2016-04-22 03:53:28.704948"]]
+  [1m[36m (366.8ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/tags" for 127.0.0.1 at 2016-04-22 14:25:25 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TagsController#index as HTML
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered tags/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 2415ms (Views: 2389.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-04-22 14:25:28 +0700
+
+
+Started GET "/assets/application.self-49637aecf9e91ded9e537039f529bb178598650cf316ae52542bac241b2e6c04.css?body=1" for 127.0.0.1 at 2016-04-22 14:25:28 +0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-04-22 14:25:28 +0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-04-22 14:25:28 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-04-22 14:25:28 +0700
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-04-22 14:25:28 +0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-04-22 14:25:28 +0700
