@@ -20,6 +20,7 @@
       <div class="card col-xs-4">
         <img src="<%= msg.image%>" />
         <h2> <%= msg.title %> </h2>
+        <%= link_to "Learn more", tag_path(msg) %>  <!-- add more -->
       </div>
       <% end %>
 
